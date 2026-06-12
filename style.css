@@ -829,34 +829,35 @@ body.view-control-buttons .viewControlButton {
   margin-left: 105px;
 }
 /* ==========================================================================
-   FINAL OPTIMIZED FULL-SCREEN SPLIT LAYOUT FOR MARZIPANO HOTSPOTS
+   CENTERED POP-UP SPLIT LAYOUT FOR MARZIPANO HOTSPOTS
    ========================================================================== */
 
-/* 1. Force Marzipano's active pop-up box to tear out of its tiny limits and fill the screen */
+/* 1. Force the active pop-up to be a centered, floating rectangle */
 .info-hotspot.visible .info-hotspot-text,
 .desktop .info-hotspot.visible .info-hotspot-text {
   position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  max-height: 100vh !important;
-  background-color: rgba(11, 15, 20, 0.95) !important; /* Sleek dark overlay backdrop */
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  -webkit-transform: translate(-50%, -50%) !important;
+  width: 80vw !important;         /* Makes it 80% of the screen width */
+  max-width: 1000px !important;   /* Stops it from getting too massive on huge monitors */
+  height: 70vh !important;        /* Makes it 70% of the screen height */
+  max-height: 600px !important;   /* Caps the maximum height */
   z-index: 99999 !important;
   display: flex !important;
   flex-direction: row !important;
   padding: 0 !important;
   margin: 0 !important;
-  border-radius: 0 !important;
-  transform: none !important;
-  -webkit-transform: none !important;
-  box-sizing: border-box !important;
+  border-radius: 12px !important; /* Soft rounded corners for the pop-up */
+  overflow: hidden !important;    /* Keeps the inside boxes from spilling out of the corners */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8) !important; /* Gives it a beautiful floating shadow */
 }
 
-/* 2. Left Side: Force the 3D asset container to occupy exactly 65% width */
+/* 2. Left Side: 65% width */
 .modal-slider-container {
   width: 65% !important;
-  height: 100vh !important;
+  height: 100% !important; /* Changed from 100vh to 100% to fit inside the new box */
   background-color: #000000 !important;
   display: flex !important;
   align-items: center !important;
@@ -866,7 +867,7 @@ body.view-control-buttons .viewControlButton {
   box-sizing: border-box !important;
 }
 
-/* Force the embedded Sketchfab iframe to fill every inch of its 65% area */
+/* Force the Sketchfab iframe to fill its side */
 .modal-slider-container iframe {
   width: 100% !important;
   height: 100% !important;
@@ -874,20 +875,20 @@ body.view-control-buttons .viewControlButton {
   display: block !important;
 }
 
-/* 3. Right Side: Force the description panel to occupy exactly 35% width */
+/* 3. Right Side: 35% width */
 .modal-text-panel {
   width: 35% !important;
-  height: 100vh !important;
-  background-color: #161b22 !important; /* Elegant deep slate panel */
+  height: 100% !important; /* Changed from 100vh to 100% */
+  background-color: #161b22 !important; 
   box-sizing: border-box !important;
-  overflow-y: auto !important; /* Lets long historical texts scroll naturally */
-  padding: 60px 40px !important;
+  overflow-y: auto !important; 
+  padding: 40px 30px !important;
   border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Typography Customization inside the Text Panel */
+/* Typography Customization */
 .modal-text-panel h2 {
-  font-size: 28px !important;
+  font-size: 24px !important;
   font-weight: 600 !important;
   margin-top: 0 !important;
   margin-bottom: 15px !important;
@@ -898,13 +899,13 @@ body.view-control-buttons .viewControlButton {
 }
 
 .modal-text-panel p {
-  font-size: 16px !important;
+  font-size: 15px !important;
   line-height: 1.6 !important;
-  color: #c9d1d9 !important; /* High contrast reading gray */
+  color: #c9d1d9 !important; 
   margin-bottom: 20px !important;
 }
 
-/* 4. Layering Fix: Pins Marzipano's close 'X' button cleanly to the top-right corner */
+/* 4. Keep the close (X) button cleanly visible at the top right of the screen */
 .info-hotspot.visible .info-hotspot-close-wrapper {
   position: fixed !important;
   top: 20px !important;
@@ -919,17 +920,19 @@ body.view-control-buttons .viewControlButton {
 @media (max-width: 768px) {
   .info-hotspot.visible .info-hotspot-text,
   .desktop .info-hotspot.visible .info-hotspot-text {
+    width: 90vw !important;
+    height: 85vh !important;
     flex-direction: column !important; /* Stacks panels top-and-bottom on phone screens */
   }
   
   .modal-slider-container {
     width: 100% !important;
-    height: 45% !important; /* 3D Model viewer gets top placement */
+    height: 50% !important; 
   }
   
   .modal-text-panel {
     width: 100% !important;
-    height: 55% !important; /* Description gets lower screen placement */
+    height: 50% !important; 
     border-left: none !important;
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 30px 20px !important;
