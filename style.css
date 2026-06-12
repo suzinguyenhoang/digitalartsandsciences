@@ -848,80 +848,71 @@ body.view-control-buttons .viewControlButton {
   display: flex; /* This turns it back on when triggered */
 }
 
-/* Left Side: 65% Media Area */
-.media-viewport {
-  width: 65%;
-  height: 100%;
-  background-color: #000000;
-  position: relative;
+/* Left Side: 65% Media Area (Matches data.js class name) */
+.modal-slider-container {
+  width: 65% !important;
+  height: 100% !important;
+  background-color: #000000 !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 /* Force the embedded Sketchfab iframe to fully stretch inside the 65% frame */
-.media-viewport iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
+.modal-slider-container iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  display: block !important;
 }
 
-/* Right Side: 35% Scrollable Text Panel */
-.text-panel {
-  width: 35%;
-  height: 100%;
-  background-color: #161b22; /* Sleek dark theme slate */
-  box-sizing: border-box;
-  overflow-y: auto; /* Allows long descriptions to scroll naturally inside this panel */
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+/* Right Side: 35% Scrollable Text Panel (Matches data.js class name) */
+.modal-text-panel {
+  width: 35% !important;
+  height: 100% !important;
+  background-color: #161b22 !important; /* Sleek dark theme slate */
+  box-sizing: border-box !important;
+  overflow-y: auto !important; /* Allows long descriptions to scroll naturally */
+  padding: 50px 40px !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Text Padding and Typography Layout */
-.text-content {
-  padding: 50px 40px;
-  color: #ffffff;
+/* Typography Adjustments inside the Text Panel */
+.modal-text-panel h2 {
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  margin-top: 0 !important;
+  margin-bottom: 15px !important;
+  letter-spacing: -0.5px !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid #30363d !important;
+  padding-bottom: 15px !important;
 }
 
-.text-content h2 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 15px;
-  letter-spacing: -0.5px;
-  color: #ffffff;
-}
-
-.divider {
-  border: none;
-  height: 2px;
-  background-color: #30363d;
-  margin-bottom: 25px;
-}
-
-.text-content p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #c9d1d9; /* Highly readable gray text */
-  margin-bottom: 20px;
+.modal-text-panel p {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  color: #c9d1d9 !important; /* Highly readable gray text */
+  margin-bottom: 20px !important;
 }
 
 /* --- Responsive Layout Rules for Mobile Screens --- */
 @media (max-width: 768px) {
-  .split-screen-container {
-    flex-direction: column; /* Stacks panels vertically on phones */
+  .info-hotspot-modal .info-hotspot-text {
+    flex-direction: column !important;
   }
   
-  .media-viewport {
-    width: 100%;
-    height: 45%; /* Gives 3D viewport top billing on mobile screen height */
+  .modal-slider-container {
+    width: 100% !important;
+    height: 45% !important; /* Gives 3D viewport top billing on mobile */
   }
   
-  .text-panel {
-    width: 100%;
-    height: 55%;
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .text-content {
-    padding: 30px 20px;
+  .modal-text-panel {
+    width: 100% !important;
+    height: 55% !important;
+    border-left: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 30px 20px !important;
   }
 }
