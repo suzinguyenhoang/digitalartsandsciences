@@ -828,3 +828,96 @@ body.view-control-buttons .viewControlButton {
 .viewControlButton-6 {
   margin-left: 105px;
 }
+/* ==========================================================================
+   CUSTOM SPLIT-SCREEN LAYOUT (3D Embed Left / Text Panel Right)
+   ========================================================================== */
+
+/* Flexbox Split Screen Engine */
+.split-screen-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5000; /* Keeps it layered cleanly in your project */
+}
+
+/* Left Side: 65% Media Area */
+.media-viewport {
+  width: 65%;
+  height: 100%;
+  background-color: #000000;
+  position: relative;
+}
+
+/* Force the embedded Sketchfab iframe to fully stretch inside the 65% frame */
+.media-viewport iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Right Side: 35% Scrollable Text Panel */
+.text-panel {
+  width: 35%;
+  height: 100%;
+  background-color: #161b22; /* Sleek dark theme slate */
+  box-sizing: border-box;
+  overflow-y: auto; /* Allows long descriptions to scroll naturally inside this panel */
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Text Padding and Typography Layout */
+.text-content {
+  padding: 50px 40px;
+  color: #ffffff;
+}
+
+.text-content h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: #30363d;
+  margin-bottom: 25px;
+}
+
+.text-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #c9d1d9; /* Highly readable gray text */
+  margin-bottom: 20px;
+}
+
+/* --- Responsive Layout Rules for Mobile Screens --- */
+@media (max-width: 768px) {
+  .split-screen-container {
+    flex-direction: column; /* Stacks panels vertically on phones */
+  }
+  
+  .media-viewport {
+    width: 100%;
+    height: 45%; /* Gives 3D viewport top billing on mobile screen height */
+  }
+  
+  .text-panel {
+    width: 100%;
+    height: 55%;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .text-content {
+    padding: 30px 20px;
+  }
+}
