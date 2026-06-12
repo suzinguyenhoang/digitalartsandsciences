@@ -37,7 +37,7 @@ var APP_DATA = {
           "yaw": 1.4627119179393828,
           "pitch": 0.37250889459604153,
           "title": "Backpack (Ba lô)",
-          "text": "Text"
+          "text": "<div class='modal-slider-container'><iframe width='100%' height='100%' src='https://sketchfab.com/models/eab719ae740e4b06b11669385269a013/embed' frameborder='0' allowfullscreen style='border: none;'></iframe></div><div class='modal-text-panel'><h2>Artifact Title</h2><p>Your customizable description or research text goes right here...</p></div>"
         },
         {
           "yaw": 2.7080803718458437,
