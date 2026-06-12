@@ -834,7 +834,7 @@ body.view-control-buttons .viewControlButton {
 
 /* Flexbox Split Screen Engine */
 .split-screen-container {
-  display: flex;
+  display: none;
   width: 100vw;
   height: 100vh;
   flex-direction: row;
@@ -842,6 +842,10 @@ body.view-control-buttons .viewControlButton {
   top: 0;
   left: 0;
   z-index: 5000; /* Keeps it layered cleanly in your project */
+}
+
+.split-screen-container.visible {
+  display: flex; /* This turns it back on when triggered */
 }
 
 /* Left Side: 65% Media Area */
