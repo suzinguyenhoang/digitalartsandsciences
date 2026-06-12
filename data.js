@@ -2,7 +2,7 @@ var APP_DATA = {
   "scenes": [
     {
       "id": "0-dcmmmmmm",
-      "name": "dcmmmmmm",
+      "name": "First view",
       "levels": [
         {
           "tileSize": 256,
