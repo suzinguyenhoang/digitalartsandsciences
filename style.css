@@ -829,37 +829,44 @@ body.view-control-buttons .viewControlButton {
   margin-left: 105px;
 }
 /* ==========================================================================
-   CUSTOM SPLIT-SCREEN LAYOUT (3D Embed Left / Text Panel Right)
+   FINAL OPTIMIZED FULL-SCREEN SPLIT LAYOUT FOR MARZIPANO HOTSPOTS
    ========================================================================== */
 
-/* Flexbox Split Screen Engine */
-.split-screen-container {
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  flex-direction: row;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5000; /* Keeps it layered cleanly in your project */
+/* 1. Force Marzipano's active pop-up box to tear out of its tiny limits and fill the screen */
+.info-hotspot.visible .info-hotspot-text,
+.desktop .info-hotspot.visible .info-hotspot-text {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  background-color: rgba(11, 15, 20, 0.95) !important; /* Sleek dark overlay backdrop */
+  z-index: 99999 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  box-sizing: border-box !important;
 }
 
-.split-screen-container.visible {
-  display: flex; /* This turns it back on when triggered */
-}
-
-/* Left Side: 65% Media Area (Matches data.js class name) */
+/* 2. Left Side: Force the 3D asset container to occupy exactly 65% width */
 .modal-slider-container {
   width: 65% !important;
-  height: 100% !important;
+  height: 100vh !important;
   background-color: #000000 !important;
-  position: relative !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
 }
 
-/* Force the embedded Sketchfab iframe to fully stretch inside the 65% frame */
+/* Force the embedded Sketchfab iframe to fill every inch of its 65% area */
 .modal-slider-container iframe {
   width: 100% !important;
   height: 100% !important;
@@ -867,18 +874,18 @@ body.view-control-buttons .viewControlButton {
   display: block !important;
 }
 
-/* Right Side: 35% Scrollable Text Panel (Matches data.js class name) */
+/* 3. Right Side: Force the description panel to occupy exactly 35% width */
 .modal-text-panel {
   width: 35% !important;
-  height: 100% !important;
-  background-color: #161b22 !important; /* Sleek dark theme slate */
+  height: 100vh !important;
+  background-color: #161b22 !important; /* Elegant deep slate panel */
   box-sizing: border-box !important;
-  overflow-y: auto !important; /* Allows long descriptions to scroll naturally */
-  padding: 50px 40px !important;
+  overflow-y: auto !important; /* Lets long historical texts scroll naturally */
+  padding: 60px 40px !important;
   border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Typography Adjustments inside the Text Panel */
+/* Typography Customization inside the Text Panel */
 .modal-text-panel h2 {
   font-size: 28px !important;
   font-weight: 600 !important;
@@ -893,24 +900,36 @@ body.view-control-buttons .viewControlButton {
 .modal-text-panel p {
   font-size: 16px !important;
   line-height: 1.6 !important;
-  color: #c9d1d9 !important; /* Highly readable gray text */
+  color: #c9d1d9 !important; /* High contrast reading gray */
   margin-bottom: 20px !important;
 }
 
-/* --- Responsive Layout Rules for Mobile Screens --- */
+/* 4. Layering Fix: Pins Marzipano's close 'X' button cleanly to the top-right corner */
+.info-hotspot.visible .info-hotspot-close-wrapper {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 100000 !important;
+  display: block !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+/* --- Responsive Rules: Adapts dynamically for Mobile screens --- */
 @media (max-width: 768px) {
-  .info-hotspot-modal .info-hotspot-text {
-    flex-direction: column !important;
+  .info-hotspot.visible .info-hotspot-text,
+  .desktop .info-hotspot.visible .info-hotspot-text {
+    flex-direction: column !important; /* Stacks panels top-and-bottom on phone screens */
   }
   
   .modal-slider-container {
     width: 100% !important;
-    height: 45% !important; /* Gives 3D viewport top billing on mobile */
+    height: 45% !important; /* 3D Model viewer gets top placement */
   }
   
   .modal-text-panel {
     width: 100% !important;
-    height: 55% !important;
+    height: 55% !important; /* Description gets lower screen placement */
     border-left: none !important;
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 30px 20px !important;
