@@ -89,8 +89,17 @@ var APP_DATA = {
         {
           "yaw": -0.10995028275836205,
           "pitch": 0.3377685639918191,
-          "title": "Hammock (võng)",
-          "text": "huhu"
+          "title": "Võng (Hammock)",
+          "text": "<div class='modal-slider-container'><iframe title='3D Model' frameborder='0' allowfullscreen allow='autoplay; fullscreen; xr-spatial-tracking' src='https://sketchfab.com/models/eab719ae740e4b06b11669385269a013/embed'></iframe></div><div class='modal-text-panel'><h2>Hammock (Võng)</h2><p>"Cái võng này là bất di bất dịch với người lính."
+"A hammock was non-negotiable for every soldier."
+“Mắc võng là cả một nghệ thuật. Chứ còn mắc võng, trời mời cả tuần mưa tầm mưa tã. mắc thế nào cho không ướt võng”
+“Hanging a hammock was an art in itself. During weeks of relentless rain, soldiers had to master the art of keeping their hammocks dry.”
+"Lưng thằng kia nằm lên bụng thằng này nhưng hai võng khác nhau."
+"One soldier's back would rest against another's stomach, but each remained in his own hammock."
+</p><p>Lightweight and easy to carry, the hammock followed soldiers everywhere. It was a bed, a shelter, and sometimes even the final resting place. Life in the Trường Sơn forests often meant enduring weeks of heavy rain and difficult terrain. Soldiers developed techniques for hanging their hammocks between trees, positioning poles and rain covers so that water would drain away rather than soak their sleeping space. 
+During the cold and rainy seasons in the Trường Sơn forests, staying warm became a constant challenge. Mr. Thảo recalls that soldiers often slept in pairs to preserve body heat. Rather than sharing a single hammock, each person remained in their own hammock, hung side by side. They would position themselves closely enough that one soldier's back rested against the other's stomach, allowing warmth to be shared without the discomfort of being pressed together. Combined with plastic sheets tied beneath the hammocks to block wind and rain, this simple arrangement helped them endure long nights in the jungle.
+More than fifty years later, the hammock remains in daily use on Mr. Thảo’s balcony. Every patch and repair tells a story of not only wear and survival, but a life remembered and carefully preserved through time.
+</p></div>"
         },
         {
           "yaw": 0.20910198383495704,
