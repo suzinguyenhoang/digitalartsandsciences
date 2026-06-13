@@ -936,8 +936,6 @@ body.view-control-buttons .viewControlButton {
     border-left: none !important;
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 30px 20px !important;
-    overflow-y: auto !important; 
-    box-sizing: border-box !important;
   }
 }
 /* ==========================================================================
