@@ -980,19 +980,3 @@ body.view-control-buttons .viewControlButton {
   padding: 20px !important;
   box-sizing: border-box !important;
 }
-/* Stack items vertically */
-.modal-slider-container {
-  width: 100% !important;
-  height: 50% !important;
-  flex: none !important; /* Stops the flex horizontal rule */
-}
-
-.modal-text-panel {
-  width: 100% !important;
-  height: 50% !important;
-  flex: none !important; /* Stops the flex horizontal rule */
-  overflow-y: auto !important; /* Adds scrollbar for the text */
-  padding: 20px !important;
-  box-sizing: border-box !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
