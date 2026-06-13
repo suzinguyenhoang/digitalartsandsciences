@@ -938,3 +938,43 @@ body.view-control-buttons .viewControlButton {
     padding: 30px 20px !important;
   }
 }
+/* ==========================================================================
+   PHOTO CAROUSEL FOR HOTSPOTS
+   ========================================================================== */
+
+.photo-carousel {
+  display: flex !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  width: 100% !important;
+  height: 100% !important;
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: touch !important; /* Smooth swiping on phones */
+  background-color: #000000 !important;
+}
+
+/* Make the scrollbar sleek and visible so users know to scroll */
+.photo-carousel::-webkit-scrollbar {
+  height: 10px;
+}
+.photo-carousel::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.8);
+}
+.photo-carousel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+.photo-carousel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Force every image to fit perfectly on the screen one at a time */
+.photo-carousel img {
+  flex: 0 0 100% !important; 
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important; /* Shows the whole image without cropping */
+  scroll-snap-align: center !important; /* Snaps perfectly to the next image */
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
