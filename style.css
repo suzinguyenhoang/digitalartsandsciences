@@ -980,3 +980,15 @@ body.view-control-buttons .viewControlButton {
   padding: 20px !important;
   box-sizing: border-box !important;
 }
+.modal-slider-container {
+  flex: 1; /* Forces this box to take up 50% of the available width */
+  height: 100% !important;
+  min-width: 0; /* This prevents the image from breaking the layout */
+}
+
+.modal-text-panel {
+  flex: 1; /* Forces this box to take up the other 50% of the available width */
+  overflow-y: auto; /* Adds a scrollbar if your text is longer than the window */
+  padding: 20px;
+  box-sizing: border-box;
+}
