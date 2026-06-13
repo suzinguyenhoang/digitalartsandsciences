@@ -980,15 +980,19 @@ body.view-control-buttons .viewControlButton {
   padding: 20px !important;
   box-sizing: border-box !important;
 }
+/* Stack items vertically */
 .modal-slider-container {
-  flex: 1; /* Forces this box to take up 50% of the available width */
-  height: 100% !important;
-  min-width: 0; /* This prevents the image from breaking the layout */
+  width: 100% !important;
+  height: 50% !important;
+  flex: none !important; /* Stops the flex horizontal rule */
 }
 
 .modal-text-panel {
-  flex: 1; /* Forces this box to take up the other 50% of the available width */
-  overflow-y: auto; /* Adds a scrollbar if your text is longer than the window */
-  padding: 20px;
-  box-sizing: border-box;
+  width: 100% !important;
+  height: 50% !important;
+  flex: none !important; /* Stops the flex horizontal rule */
+  overflow-y: auto !important; /* Adds scrollbar for the text */
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
