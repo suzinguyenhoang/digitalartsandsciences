@@ -55,7 +55,7 @@ var APP_DATA = {
     },
     {
       "id": "1-thiet-ke-chua-co-ten-5",
-      "name": "Thiết kế chưa có tên-5",
+      "name": "Second view",
       "levels": [
         {
           "tileSize": 256,
