@@ -2,7 +2,7 @@ var APP_DATA = {
   "scenes": [
     {
       "id": "0-dcmmmmmm",
-      "name": "First view",
+      "name": "First view: Toad Backpack, Documents, Military Belt + Water Flask",
       "levels": [
         {
           "tileSize": 256,
@@ -55,7 +55,7 @@ var APP_DATA = {
     },
     {
       "id": "1-thiet-ke-chua-co-ten-5",
-      "name": "Second view",
+      "name": "Second view: Hammock, Rubber Sandals",
       "levels": [
         {
           "tileSize": 256,
@@ -102,7 +102,7 @@ var APP_DATA = {
     },
     {
       "id": "2-dcm",
-      "name": "Third View",
+      "name": "Third view: Mess Tin, Soviet Dagger, Pith Hat",
       "levels": [
         {
           "tileSize": 256,
