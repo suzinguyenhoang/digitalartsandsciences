@@ -978,3 +978,15 @@ body.view-control-buttons .viewControlButton {
   padding: 20px !important;
   box-sizing: border-box !important;
 }
+/* Reduce opacity for all info-hotspot close buttons */
+.info-hotspot-close-wrapper {
+    opacity: 0.4 !important;
+    transition: opacity 0.3s ease !important;
+    /* Optional: Ensure it stays clickable */
+    pointer-events: auto !important;
+}
+
+/* Make it fade back to full visibility when hovered */
+.info-hotspot-close-wrapper:hover {
+    opacity: 1 !important;
+}
